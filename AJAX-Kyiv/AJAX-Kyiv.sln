@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{019EDC90-75A6-4A4F-A2EE-B78299C9CA40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{B8F85525-5867-429F-A5E2-1C3BCFF2BB6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{7B734721-1C56-4E2B-8FD6-14E1E6BC042B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AFA06FDB-75F7-4AA4-939C-DD58D53006AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AJAX-Kyiv.Domain", "AJAX-Kyiv.Domain\AJAX-Kyiv.Domain.csproj", "{ECBA0F80-CDD1-432B-B176-C71548948422}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Footballer.Application", "Footballer.Application\Footballer.Application.csproj", "{85D155E9-CCD1-40AE-B04F-E71FF5E1A8CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Footballer.Persistence", "Footballer.Persistence\Footballer.Persistence.csproj", "{AA22CEB0-3895-4F20-BF7C-3F73A1ABF0DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AJAX-Kyiv.WEBApi", "AJAX-Kyiv.WEBApi\AJAX-Kyiv.WEBApi.csproj", "{AFF3A833-9177-47C1-8587-63304052D951}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECBA0F80-CDD1-432B-B176-C71548948422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECBA0F80-CDD1-432B-B176-C71548948422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECBA0F80-CDD1-432B-B176-C71548948422}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECBA0F80-CDD1-432B-B176-C71548948422}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85D155E9-CCD1-40AE-B04F-E71FF5E1A8CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85D155E9-CCD1-40AE-B04F-E71FF5E1A8CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85D155E9-CCD1-40AE-B04F-E71FF5E1A8CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85D155E9-CCD1-40AE-B04F-E71FF5E1A8CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA22CEB0-3895-4F20-BF7C-3F73A1ABF0DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA22CEB0-3895-4F20-BF7C-3F73A1ABF0DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA22CEB0-3895-4F20-BF7C-3F73A1ABF0DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA22CEB0-3895-4F20-BF7C-3F73A1ABF0DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFF3A833-9177-47C1-8587-63304052D951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF3A833-9177-47C1-8587-63304052D951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF3A833-9177-47C1-8587-63304052D951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF3A833-9177-47C1-8587-63304052D951}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ECBA0F80-CDD1-432B-B176-C71548948422} = {019EDC90-75A6-4A4F-A2EE-B78299C9CA40}
+		{85D155E9-CCD1-40AE-B04F-E71FF5E1A8CF} = {019EDC90-75A6-4A4F-A2EE-B78299C9CA40}
+		{AA22CEB0-3895-4F20-BF7C-3F73A1ABF0DF} = {B8F85525-5867-429F-A5E2-1C3BCFF2BB6D}
+		{AFF3A833-9177-47C1-8587-63304052D951} = {7B734721-1C56-4E2B-8FD6-14E1E6BC042B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7EE7A4D-ACCC-4C7B-9CD0-166E7C917B6C}
+	EndGlobalSection
+EndGlobal
