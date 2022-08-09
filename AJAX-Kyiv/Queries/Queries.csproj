@@ -9,4 +9,8 @@
     <ProjectReference Include="..\Footballer.Persistence\Footballer.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="GetFootballerDetails\" />
+  </ItemGroup>
+
 </Project>
