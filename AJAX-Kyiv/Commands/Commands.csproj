@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.17" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Footballer.Application\Footballer.Application.csproj" />
+    <ProjectReference Include="..\Footballer.Persistence\Footballer.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
