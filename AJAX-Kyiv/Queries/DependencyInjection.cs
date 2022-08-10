@@ -4,11 +4,11 @@ using Footballers.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Footballers.Application.Interfaces;
 
-namespace Footballer.Persistence
+namespace Queries
 {
     public static class DependencyInjection
     {
-        /*public static IServiceCollection AddPersistense(this IServiceCollection
+        public static IServiceCollection AddPersistense(this IServiceCollection
             services, IConfiguration configuration)
         {
             var connectionString = configuration["DbConnection"];
@@ -19,6 +19,6 @@ namespace Footballer.Persistence
             services.AddScoped<IFootballersDbContext>(provider =>
                 provider.GetService<FootballersDbContext>());
             return services;
-        }*/
+        }
     }
 }

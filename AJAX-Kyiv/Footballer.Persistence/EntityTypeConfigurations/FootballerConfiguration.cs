@@ -1,13 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using AJAXKyiv.Domain;
 
 
 namespace Footballers.Persistence.EntityTypeConfigurations
 {
-    public class FootballerConfiguration : IEntityTypeConfiguration<Footballer>
+    public class FootballerConfiguration : IEntityTypeConfiguration<AJAXKyiv.Domain.Footballer>
     {
-        public void Configure(EntityTypeBuilder<Footballer> builder)
+        public void Configure(EntityTypeBuilder<AJAXKyiv.Domain.Footballer> builder)
         {
             builder.HasKey(note => note.Id);
             builder.HasIndex(note => note.Id).IsUnique();

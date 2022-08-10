@@ -3,6 +3,7 @@ using Footballers.Application.Interfaces;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using AJAXKyiv.Domain;
 
 namespace Footballers.Application.Footballers.Commands.DeleteFootballer
 {

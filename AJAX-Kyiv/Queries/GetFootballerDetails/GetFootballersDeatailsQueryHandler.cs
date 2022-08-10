@@ -5,6 +5,7 @@ using MediatR;
 using Footballers.Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Footballers.Application.Common.Exceptions;
+using AJAXKyiv.Domain;
 
 namespace Footballers.Application.Footballers.Queries.GetFootballerDetails
 {
