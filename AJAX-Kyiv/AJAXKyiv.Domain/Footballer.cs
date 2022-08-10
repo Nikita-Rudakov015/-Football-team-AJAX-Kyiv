@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AJAX_Kyiv.Domain
+namespace AJAXKyiv.Domain
 {
     public class Footballer
     {
@@ -10,6 +10,5 @@ namespace AJAX_Kyiv.Domain
         public string LastName { get; set; }
         public int number { get; set; }
         public string position { get; set; }
-
     }
 }

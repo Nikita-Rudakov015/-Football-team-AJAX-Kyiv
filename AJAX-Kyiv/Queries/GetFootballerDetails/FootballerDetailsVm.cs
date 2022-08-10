@@ -1,11 +1,10 @@
 ﻿using System;
 using AutoMapper;
 using Footballers.Application.Common.Mapping;
-using AJAX_Kyiv.Domain;
 
 namespace Footballers.Application.Footballers.Queries.GetFootballerDetails
 {
-    public class FootballerDetailsVm : IMapWith<Footballer>
+    public class FootballerDetailsVm : IMapWith<AJAXKyiv.Domain.Footballer>
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
@@ -15,7 +14,7 @@ namespace Footballers.Application.Footballers.Queries.GetFootballerDetails
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Footballer, FootballerDetailsVm>()
+            profile.CreateMap<AJAXKyiv.Domain.Footballer, FootballerDetailsVm>()
                 .ForMember(footballerVm => footballerVm.Name,
                     opt => opt.MapFrom(note => note.Name))
                 .ForMember(footballerVm => footballerVm.LastName,

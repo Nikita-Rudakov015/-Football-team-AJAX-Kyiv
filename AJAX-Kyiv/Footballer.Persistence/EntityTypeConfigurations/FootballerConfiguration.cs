@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using AJAX_Kyiv.Domain;
+using AJAXKyiv.Domain;
 
 
 namespace Footballers.Persistence.EntityTypeConfigurations
