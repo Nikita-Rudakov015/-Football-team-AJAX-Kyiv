@@ -2,8 +2,7 @@
 using Footballers.Application.Interfaces;
 using Footballers.Persistence.EntityTypeConfigurations;
 
-
-namespace Footballers.Persistence
+namespace Footballer.Persistence
 {
     public class FootballersDbContext : DbContext, IFootballersDbContext
     {

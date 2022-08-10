@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Footballer.Persistence;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,23 @@ namespace AJAX_Kyiv.WEBApi
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+
+            using(var scope = host.Services.CreateScope())
+            {
+                var serviceProvider = scope.ServiceProvider;
+                try
+                {
+                    var context = serviceProvider.GetRequiredService<FootballersDbContext>();
+                    DbInitializer.Initialize(context);
+                }
+                catch (Exception exception)
+                {
+
+                }
+            }
+
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

@@ -1,14 +1,13 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
-using Footballers.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Footballers.Application.Interfaces;
 
-namespace Queries
+namespace Footballer.Persistence
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddPersistense(this IServiceCollection
+        public static IServiceCollection AddPersistence(this IServiceCollection
             services, IConfiguration configuration)
         {
             var connectionString = configuration["DbConnection"];

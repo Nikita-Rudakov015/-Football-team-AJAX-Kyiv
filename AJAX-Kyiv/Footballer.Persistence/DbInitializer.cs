@@ -1,4 +1,4 @@
-﻿namespace Footballers.Persistence
+﻿namespace Footballer.Persistence
 {
     public class DbInitializer
     {

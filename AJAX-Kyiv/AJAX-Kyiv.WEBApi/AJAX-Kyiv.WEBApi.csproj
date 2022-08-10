@@ -5,4 +5,15 @@
     <RootNamespace>AJAX_Kyiv.WEBApi</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Commands\Commands.csproj" />
+    <ProjectReference Include="..\Footballer.Application\Footballer.Application.csproj" />
+    <ProjectReference Include="..\Footballer.Persistence\Footballer.Persistence.csproj" />
+    <ProjectReference Include="..\Queries\Queries.csproj" />
+  </ItemGroup>
+
 </Project>
