@@ -2,7 +2,6 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using AJAX_Kyiv.Domain;
 using Footballers.Application.Interfaces;
 
 namespace Footballers.Application.Footballers.Commands.CreateFootballer
@@ -18,7 +17,7 @@ namespace Footballers.Application.Footballers.Commands.CreateFootballer
         public async Task<Guid> Handle(CreateFootballerCommand request,
             CancellationToken cancellationToken)
         {
-            var footballer = new Footballer
+            var footballer = new AJAXKyiv.Domain.Footballer
             {
                 UserId = request.UserId,
                 Name = request.Name,

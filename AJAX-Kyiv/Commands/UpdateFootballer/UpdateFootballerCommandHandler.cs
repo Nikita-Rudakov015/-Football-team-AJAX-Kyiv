@@ -4,7 +4,6 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Footballers.Application.Interfaces;
 using Footballers.Application.Common.Exceptions;
-using AJAX_Kyiv.Domain;
 
 namespace Footballers.Application.Footballers.Commands.UpdateFootballer
 {
