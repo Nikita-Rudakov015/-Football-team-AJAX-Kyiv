@@ -8,6 +8,7 @@ using Footballers.Application.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Footballer.Application;
 using Footballer.Persistence;
+using Microsoft.AspNetCore.Http;
 
 namespace AJAX_Kyiv.WEBApi
 {
@@ -56,7 +57,9 @@ namespace AJAX_Kyiv.WEBApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Footballer}/{action=Index}/{id?}");
             });
         }
     }

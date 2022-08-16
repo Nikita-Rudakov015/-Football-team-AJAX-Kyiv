@@ -9,7 +9,6 @@ using System;
 using AutoMapper;
 using AJAX_Kyiv.WEBApi.Models;
 
-
 namespace AJAX_Kyiv.WEBApi.Controllers
 {
     [Route("api/[controller]")]
@@ -30,7 +29,7 @@ namespace AJAX_Kyiv.WEBApi.Controllers
             return Ok(vm);
         }
 
-        [HttpGet("{id}]")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<FootballerDetailsVm>> Get(Guid id)
         {
             var query = new GetFootballersDeatailsQuery
