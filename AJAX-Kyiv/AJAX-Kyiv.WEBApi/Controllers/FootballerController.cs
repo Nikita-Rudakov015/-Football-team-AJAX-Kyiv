@@ -18,7 +18,7 @@ namespace AJAX_Kyiv.WEBApi.Controllers
 
         public FootballerController(IMapper mapper) => _mapper = mapper;
 
-        [HttpGet]
+        [HttpGet ("get")]
         public async Task<ActionResult<FootballerListVm>> GetAll()
         {
             var query = new GetFootballerListQuery
@@ -29,7 +29,7 @@ namespace AJAX_Kyiv.WEBApi.Controllers
             return Ok(vm);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}/get")]
         public async Task<ActionResult<FootballerDetailsVm>> Get(Guid id)
         {
             var query = new GetFootballersDeatailsQuery
@@ -41,7 +41,7 @@ namespace AJAX_Kyiv.WEBApi.Controllers
             return Ok(vm);
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         public async Task<ActionResult<Guid>> Create([FromBody] CreateFootballerDto createFootballerDto) 
         {
             var command = _mapper.Map<CreateFootballerCommand>(createFootballerDto);
@@ -50,7 +50,7 @@ namespace AJAX_Kyiv.WEBApi.Controllers
             return Ok(footballerId);
         }
 
-        [HttpPut]
+        [HttpPut("{id}/update")]
         public async Task<IActionResult> Update([FromBody] UpdateFootballerDto updateFootballerDto)
         {
             var command = _mapper.Map<UpdateFootballerCommand>(updateFootballerDto);
@@ -59,7 +59,7 @@ namespace AJAX_Kyiv.WEBApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete ("{id}")]
+        [HttpDelete ("{id}/delete")]
         public async Task<IActionResult> Delete(Guid id)
         {
             var command = new DeleteFootballerCommand

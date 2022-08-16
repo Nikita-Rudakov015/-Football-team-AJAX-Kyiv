@@ -59,7 +59,7 @@ namespace AJAX_Kyiv.WEBApi
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Footballer}/{action=Index}/{id?}");
+                    pattern: "{controller=Footballer}/{id?}");
             });
         }
     }

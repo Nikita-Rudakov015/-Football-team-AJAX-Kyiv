@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AJAX_Kyiv.WEBApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     public abstract class BaseController : ControllerBase
     {
         private IMediator _mediator;
