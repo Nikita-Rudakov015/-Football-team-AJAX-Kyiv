@@ -8,7 +8,7 @@ using Footballers.Application.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Footballer.Application;
 using Footballer.Persistence;
-using Microsoft.AspNetCore.Http;
+using AJAX_Kyiv.WEBApi.Middleware;
 
 namespace AJAX_Kyiv.WEBApi
 {
@@ -51,6 +51,7 @@ namespace AJAX_Kyiv.WEBApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCustomExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();
             app.UseCors("AllowAll");
@@ -58,8 +59,7 @@ namespace AJAX_Kyiv.WEBApi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                /*name: "default",
-                pattern: "{controller=Footballer}/{action=GetAll}/{id?}");*/
+
             });
         }
     }
