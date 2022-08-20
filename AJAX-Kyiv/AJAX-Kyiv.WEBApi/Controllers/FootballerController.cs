@@ -12,13 +12,14 @@ using AJAX_Kyiv.WEBApi.Models;
 namespace AJAX_Kyiv.WEBApi.Controllers
 {
     [Route("api/[controller]")]
+    [Route("/")]
     public class FootballerController : BaseController
     {
         private readonly IMapper _mapper;
 
         public FootballerController(IMapper mapper) => _mapper = mapper;
 
-        [HttpGet ("get")]
+        [HttpGet]
         public async Task<ActionResult<FootballerListVm>> GetAll()
         {
             var query = new GetFootballerListQuery

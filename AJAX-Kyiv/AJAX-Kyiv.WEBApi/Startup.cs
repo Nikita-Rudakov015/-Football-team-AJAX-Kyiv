@@ -57,9 +57,9 @@ namespace AJAX_Kyiv.WEBApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Footballer}/{id?}");
+                endpoints.MapControllers();
+                /*name: "default",
+                pattern: "{controller=Footballer}/{action=GetAll}/{id?}");*/
             });
         }
     }
