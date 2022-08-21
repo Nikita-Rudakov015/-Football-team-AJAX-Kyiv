@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commands", "Commands\Comman
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queries", "Queries\Queries.csproj", "{BB7B9759-04D1-4EEB-8B53-13925FA46569}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AJAXKyiv.Domain", "AJAXKyiv.Domain\AJAXKyiv.Domain.csproj", "{4057EEA0-45B1-4A35-A666-4103220797C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AJAXKyiv.Domain", "AJAXKyiv.Domain\AJAXKyiv.Domain.csproj", "{4057EEA0-45B1-4A35-A666-4103220797C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Footballers.Tests", "Footballers.Tests\Footballers.Tests.csproj", "{033F5F81-8E3C-43D3-A71C-54FC428368EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{4057EEA0-45B1-4A35-A666-4103220797C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4057EEA0-45B1-4A35-A666-4103220797C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4057EEA0-45B1-4A35-A666-4103220797C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{033F5F81-8E3C-43D3-A71C-54FC428368EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{033F5F81-8E3C-43D3-A71C-54FC428368EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{033F5F81-8E3C-43D3-A71C-54FC428368EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{033F5F81-8E3C-43D3-A71C-54FC428368EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{31A23FF7-BF67-4AD2-AFFE-27ED5B07D803} = {019EDC90-75A6-4A4F-A2EE-B78299C9CA40}
 		{BB7B9759-04D1-4EEB-8B53-13925FA46569} = {019EDC90-75A6-4A4F-A2EE-B78299C9CA40}
 		{4057EEA0-45B1-4A35-A666-4103220797C2} = {019EDC90-75A6-4A4F-A2EE-B78299C9CA40}
+		{033F5F81-8E3C-43D3-A71C-54FC428368EA} = {AFA06FDB-75F7-4AA4-939C-DD58D53006AA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7EE7A4D-ACCC-4C7B-9CD0-166E7C917B6C}
