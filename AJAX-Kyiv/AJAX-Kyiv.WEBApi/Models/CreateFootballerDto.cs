@@ -1,11 +1,13 @@
 ﻿using Footballers.Application.Footballers.Commands.CreateFootballer;
 using Footballers.Application.Common.Mapping;
 using AutoMapper;
+using System.ComponentModel.DataAnnotations;
 
 namespace AJAX_Kyiv.WEBApi.Models
 {
     public class CreateFootballerDto : IMapWith<CreateFootballerCommand>
     {
+        [Required]
         public string Name { get; set; }
         public string LastName { get; set; }
         public string position { get; set; }

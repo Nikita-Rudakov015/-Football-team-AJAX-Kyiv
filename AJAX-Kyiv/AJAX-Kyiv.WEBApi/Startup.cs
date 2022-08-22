@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Footballer.Application;
 using Footballer.Persistence;
 using AJAX_Kyiv.WEBApi.Middleware;
+using System;
+using System.IO;
+using MediatR;
 
 namespace AJAX_Kyiv.WEBApi
 {
@@ -28,6 +31,9 @@ namespace AJAX_Kyiv.WEBApi
                 config.AddProfile(new AssemblyMappingProfile(typeof(IFootballersDbContext).Assembly));
             });
 
+            var assembly = AppDomain.CurrentDomain.Load("Queries");
+            services.AddMediatR(assembly);
+
             services.AddApplication();
             services.AddPersistence(Configuration);
             services.AddControllers();
@@ -41,6 +47,13 @@ namespace AJAX_Kyiv.WEBApi
                     policy.AllowAnyOrigin();
                 });
             });
+
+            services.AddSwaggerGen(config =>
+            {
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                config.IncludeXmlComments(xmlPath);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +64,12 @@ namespace AJAX_Kyiv.WEBApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(config =>
+            {
+                config.RoutePrefix = string.Empty;
+                config.SwaggerEndpoint("swagger/v1/swagger.json", "AJAX-Kyiv API");
+            });
             app.UseCustomExceptionHandler();
             app.UseRouting();
             app.UseHttpsRedirection();
