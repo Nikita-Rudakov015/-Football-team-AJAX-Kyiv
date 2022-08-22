@@ -5,7 +5,6 @@ using MediatR;
 using Footballers.Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Footballers.Application.Common.Exceptions;
-using AJAXKyiv.Domain;
 
 namespace Footballers.Application.Footballers.Queries.GetFootballerDetails
 {
@@ -28,7 +27,7 @@ namespace Footballers.Application.Footballers.Queries.GetFootballerDetails
 
             if (entity == null || entity.UserId != request.UserId)
             {
-                throw new NotFoundException(nameof(Footballer), request.Id);
+                throw new NotFoundException(nameof(AJAXKyiv.Domain.Footballer), request.Id);
             }
 
             return _mapper.Map<FootballerDetailsVm>(entity);

@@ -38,7 +38,7 @@ namespace Footballers.Tests.Common
                     {
                         Name = "Player2",
                         LastName = "PlayerLastName2",
-                        Id = Guid.Parse("{81E68DE8-5D2A-4EA0-AE57-DF660112B88F}"),
+                        Id = Guid.Parse("81E68DE8-5D2A-4EA0-AE57-DF660112B88F"),
                         number = 25,
                         position = "RB",
                         UserId = UserBId,
