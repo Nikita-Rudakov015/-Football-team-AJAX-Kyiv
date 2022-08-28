@@ -9,6 +9,7 @@ namespace Footballers.Tests.Footballers.Commands
 {
     public class CreateFootballerCommandHandlerTests : TestCommandBase
     {
+        [Fact]
         public async Task CreateFootballerCommandHandlerSuccess()
         {
             //Arrange

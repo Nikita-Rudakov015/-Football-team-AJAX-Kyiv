@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Footballer.Persistence;
-using Footballer.Application;
 using Microsoft.EntityFrameworkCore;
 
 namespace Footballers.Tests.Common
