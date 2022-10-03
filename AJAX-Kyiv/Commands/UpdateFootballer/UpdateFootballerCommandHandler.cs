@@ -30,8 +30,8 @@ namespace Footballers.Application.Footballers.Commands.UpdateFootballer
 
             entity.Name = request.Name;
             entity.LastName = request.LastName;
-            entity.number = request.number;
-            entity.position = request.position;
+            entity.number = request.Number;
+            entity.position = request.Position;
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 

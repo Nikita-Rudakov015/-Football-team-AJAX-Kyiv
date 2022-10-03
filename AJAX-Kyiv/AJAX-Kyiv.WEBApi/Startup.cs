@@ -12,27 +12,39 @@ using AJAX_Kyiv.WEBApi.Middleware;
 using System;
 using System.IO;
 using MediatR;
+using Microsoft.EntityFrameworkCore.InMemory;
+using Microsoft.EntityFrameworkCore;
+using Footballers.Application.Footballers.Queries.GetFootballerList;
+using Footballers.Application.Footballers.Queries.GetFootballerDetails;
 
 namespace AJAX_Kyiv.WEBApi
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
-
         public Startup(IConfiguration configuration) => Configuration = configuration;
+
+        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<FootballersDbContext>(options =>
+                options.UseInMemoryDatabase(Configuration.GetConnectionString("MyDb")));
+
             services.AddAutoMapper(config =>
             {
                 config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
                 config.AddProfile(new AssemblyMappingProfile(typeof(IFootballersDbContext).Assembly));
+                config.AddProfile(new AssemblyMappingProfile(typeof(GetFootballerListQueryHandler).Assembly));
+                //config.AddProfile(new AssemblyMappingProfile(typeof(GetFootballersDeatailsQueryHandler).Assembly));
             });
 
-            var assembly = AppDomain.CurrentDomain.Load("Queries");
-            services.AddMediatR(assembly);
+            var assemblyQueries = AppDomain.CurrentDomain.Load("Queries");
+            services.AddMediatR(assemblyQueries);
+
+            var assemblyCommands = AppDomain.CurrentDomain.Load("Commands");
+            services.AddMediatR(assemblyCommands);
 
             services.AddApplication();
             services.AddPersistence(Configuration);

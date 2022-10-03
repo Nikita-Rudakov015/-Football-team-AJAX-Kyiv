@@ -8,10 +8,12 @@ namespace Footballers.Persistence.EntityTypeConfigurations
     {
         public void Configure(EntityTypeBuilder<AJAXKyiv.Domain.Footballer> builder)
         {
-            builder.HasKey(note => note.Id);
-            builder.HasIndex(note => note.Id).IsUnique();
-            builder.Property(note => note.Name).HasMaxLength(50);
-            builder.Property(note => note.LastName).HasMaxLength(50);
+            builder.HasKey(footballer => footballer.Id);
+            builder.Property(footballer => footballer.Id)
+                   .ValueGeneratedOnAdd();            
+            builder.HasIndex(footballer => footballer.Id).IsUnique();
+            builder.Property(footballer => footballer.Name).HasMaxLength(50);
+            builder.Property(footballer => footballer.LastName).HasMaxLength(50);
 
         }
     }

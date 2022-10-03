@@ -10,8 +10,6 @@ namespace Commands.DeleteFootballer
         {
             RuleFor(deleteFootballerCommand =>
                 deleteFootballerCommand.UserId).NotEqual(Guid.Empty);
-            RuleFor(deleteFootballerCommand =>
-                deleteFootballerCommand.Id).NotEqual(Guid.Empty);
         }
     }
 }

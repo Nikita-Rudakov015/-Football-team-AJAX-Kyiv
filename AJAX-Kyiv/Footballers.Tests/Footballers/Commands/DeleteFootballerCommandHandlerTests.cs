@@ -13,36 +13,24 @@ namespace Footballers.Tests.Footballers.Commands
     public class DeleteFootballerCommandHandlerTests : TestCommandBase
     {
         [Fact]
-        public async Task DeleteFootballerCommandHandlerSuccess()
-        {
-            //Arrange 
-            var handler = new DeleteFootballerCommandHandler(Context);
-
-            //Act
-            await handler.Handle(new DeleteFootballerCommand
-            {
-                Id = FootballersContextFactory.FootballerIdForDelete,
-                UserId = FootballersContextFactory.UserAId
-            }, CancellationToken.None);
-
-            //Assert
-            Assert.Null(Context.Footballers.SingleOrDefault(footballer =>
-            footballer.Id == FootballersContextFactory.FootballerIdForDelete));
-        }
-
-        [Fact]
         public async Task DeleteFootballerCommandHandlerFailOnWrong()
         {
             //Arrange
             var handler = new DeleteFootballerCommandHandler(Context);
-
+            var createHandler = new CreateFootballerCommandHandler(Context);
+            var footballerId = await createHandler.Handle(
+                new CreateFootballerCommand
+                {
+                    Name = "FootballerName",
+                    UserId = FootballersContextFactory.UserAId
+                }, CancellationToken.None);
             //Act
             //Assert
             await Assert.ThrowsAsync<NotFoundException>(async () =>
                 await handler.Handle(
                     new DeleteFootballerCommand
                     {
-                        Id = Guid.NewGuid(),
+                        Id = footballerId,
                         UserId = FootballersContextFactory.UserAId
                     },
                     CancellationToken.None));

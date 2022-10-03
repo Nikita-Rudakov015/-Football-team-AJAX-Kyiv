@@ -22,7 +22,7 @@ namespace Footballers.Application.Footballers.Queries.GetFootballerList
             CancellationToken cancellationToken)
         {
             var footballersQuery = await _dbContext.Footballers
-                .Where(footballers => footballers.Id == request.UserId)
+                .Where(footballers => footballers.UserId == request.UserId)
                 .ProjectTo<FootballerLookUpDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 

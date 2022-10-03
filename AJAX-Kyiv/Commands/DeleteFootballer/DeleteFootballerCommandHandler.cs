@@ -23,7 +23,7 @@ namespace Footballers.Application.Footballers.Commands.DeleteFootballer
 
             if (entity == null || entity.UserId != request.UserId)
             {
-                throw new NotFoundException(nameof(Footballer), request.Id);
+                throw new NotFoundException(nameof(Footballer), request.UserId);
             }
 
             _dbContext.Footballers.Remove(entity);

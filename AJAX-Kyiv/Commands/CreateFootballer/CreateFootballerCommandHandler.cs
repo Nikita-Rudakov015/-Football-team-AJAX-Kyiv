@@ -7,19 +7,19 @@ using Footballers.Application.Interfaces;
 namespace Footballers.Application.Footballers.Commands.CreateFootballer
 {
     public class CreateFootballerCommandHandler
-        : IRequestHandler<CreateFootballerCommand, Guid>
+        : IRequestHandler<CreateFootballerCommand, int>
     {
         private readonly IFootballersDbContext _dbContext;
 
         public CreateFootballerCommandHandler(IFootballersDbContext dbContext) =>
             _dbContext = dbContext;
 
-        public async Task<Guid> Handle(CreateFootballerCommand request,
+        public async Task<int> Handle(CreateFootballerCommand request,
             CancellationToken cancellationToken)
         {
             var footballer = new AJAXKyiv.Domain.Footballer
             {
-                UserId = request.UserId,
+                Id = request.FootballerId,
                 Name = request.Name,
                 LastName = request.LastName,
                 number = request.number,

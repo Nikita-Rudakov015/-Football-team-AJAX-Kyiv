@@ -14,7 +14,7 @@ namespace AJAX_Kyiv.WEBApi.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
-    [Route("/")]
+    //[Route("/")]
     public class FootballerController : BaseController
     {
         private readonly IMapper _mapper;
@@ -54,12 +54,12 @@ namespace AJAX_Kyiv.WEBApi.Controllers
         /// <response code="200">Success</response>
         [HttpGet("{id}/get")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<FootballerDetailsVm>> Get(Guid id)
+        public async Task<ActionResult<FootballerDetailsVm>> Get(int id)
         {
             var query = new GetFootballersDeatailsQuery
             {
-                UserId = UserId,
-                Id = id
+                Id = id,
+                UserId = UserId
             };
             var vm = await Mediator.Send(query);
             return Ok(vm);
@@ -129,7 +129,7 @@ namespace AJAX_Kyiv.WEBApi.Controllers
         /// <response code="204">Success</response>
         [HttpDelete ("{id}/delete")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task<IActionResult> Delete(int id)
         {
             var command = new DeleteFootballerCommand
             {

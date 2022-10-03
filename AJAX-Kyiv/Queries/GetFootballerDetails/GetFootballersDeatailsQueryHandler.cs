@@ -24,7 +24,7 @@ namespace Footballers.Application.Footballers.Queries.GetFootballerDetails
             var entity = await _dbContext.Footballers
                 .FirstOrDefaultAsync(footballer =>
                 footballer.Id == request.Id, cancellationToken);
-
+  
             if (entity == null || entity.UserId != request.UserId)
             {
                 throw new NotFoundException(nameof(AJAXKyiv.Domain.Footballer), request.Id);

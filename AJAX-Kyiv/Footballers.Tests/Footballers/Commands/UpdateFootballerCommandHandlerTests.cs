@@ -25,7 +25,8 @@ namespace Footballers.Tests.Footballers.Commands
                 Name = updatedName,
             }, CancellationToken.None);
             //Assert
-            Assert.NotNull(await Context.Footballers.SingleOrDefaultAsync(footballer => 
+            Assert.NotNull(
+                await Context.Footballers.SingleOrDefaultAsync(footballer => 
                 footballer.Id == FootballersContextFactory.FootballerIdForUpdate &&
                 footballer.Name == updatedName));
         }
@@ -40,9 +41,9 @@ namespace Footballers.Tests.Footballers.Commands
             await Assert.ThrowsAsync<NotFoundException>(async () =>
                 await handler.Handle(new UpdateFootballerCommand
                 {
-                    Id = Guid.NewGuid(),
+                    Id = FootballersContextFactory.FootballerIdForUpdate,
                     UserId = FootballersContextFactory.UserAId
-                }, CancellationToken.None));
+                }, CancellationToken.None)) ;
         }
 
         [Fact]

@@ -14,6 +14,8 @@ namespace Commands.CreateFootballer
                 createFootballerCommand.LastName).NotEmpty().MaximumLength(250);
             RuleFor(createFootballerCommand =>
                 createFootballerCommand.UserId).NotEqual(Guid.Empty);
+            RuleFor(createFootballerCommand =>
+                createFootballerCommand.FootballerId).NotNull();
         }
     }
 }

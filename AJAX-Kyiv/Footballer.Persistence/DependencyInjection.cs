@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Footballers.Application.Interfaces;
+using Microsoft.Extensions.Configuration;
 
 namespace Footballer.Persistence
 {
@@ -13,7 +14,7 @@ namespace Footballer.Persistence
             var connectionString = configuration["DbConnection"];
             services.AddDbContext<FootballersDbContext>(options =>
             {
-                options.UseSqlite(connectionString);
+                options.UseInMemoryDatabase(connectionString);
             });
             services.AddScoped<IFootballersDbContext>(provider =>
                 provider.GetService<FootballersDbContext>());

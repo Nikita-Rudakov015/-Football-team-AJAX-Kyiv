@@ -14,8 +14,6 @@ namespace Commands.UpdateFootballer
                 updateFootballerCommand.LastName).NotEmpty().MaximumLength(250);
             RuleFor(updateFootballerCommand =>
                 updateFootballerCommand.UserId).NotEqual(Guid.Empty);
-            RuleFor(updateFootballerCommand =>
-                updateFootballerCommand.Id).NotEqual(Guid.Empty);
         }
     }
 }

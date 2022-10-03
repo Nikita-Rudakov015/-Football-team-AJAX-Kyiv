@@ -10,8 +10,8 @@ namespace AJAX_Kyiv.WEBApi.Models
         [Required]
         public string Name { get; set; }
         public string LastName { get; set; }
-        public string position { get; set; }
-        public int number { get; set; }
+        public string Position { get; set; }
+        public int Number { get; set; }
 
         public void Mapping(Profile profile)
         {
@@ -21,9 +21,9 @@ namespace AJAX_Kyiv.WEBApi.Models
                 .ForMember(footballerCommand => footballerCommand.LastName,
                 opt => opt.MapFrom(footballerDto => footballerDto.LastName))
                 .ForMember(footballerCommand => footballerCommand.position,
-                opt => opt.MapFrom(footballerDto => footballerDto.position))
+                opt => opt.MapFrom(footballerDto => footballerDto.Position))
                 .ForMember(footballerCommand => footballerCommand.number,
-                opt => opt.MapFrom(footballerDto => footballerDto.number));
+                opt => opt.MapFrom(footballerDto => footballerDto.Number));
         }
     }
 }

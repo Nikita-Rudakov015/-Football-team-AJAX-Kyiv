@@ -9,8 +9,8 @@ namespace Footballers.Tests.Common
         public static Guid UserAId = Guid.NewGuid();
         public static Guid UserBId = Guid.NewGuid();
 
-        public static Guid FootballerIdForDelete = Guid.NewGuid();
-        public static Guid FootballerIdForUpdate = Guid.NewGuid();
+        public static int FootballerIdForDelete;
+        public static int FootballerIdForUpdate;
 
         public static FootballersDbContext Create()
         {
@@ -24,19 +24,17 @@ namespace Footballers.Tests.Common
                     {
                         Name = "Player1",
                         LastName = "PlayerLastName1",
-                        Id = Guid.Parse("0F9CFBD5-5AD8-4E8A-AF15-1E4F407C5546"),
+                        UserId = Guid.Parse("0F9CFBD5-5AD8-4E8A-AF15-1E4F407C5546"),
                         number = 26,
                         position = "LB",
-                        UserId = UserAId
                     },
                     new AJAXKyiv.Domain.Footballer
                     {
                         Name = "Player2",
                         LastName = "PlayerLastName2",
-                        Id = Guid.Parse("81E68DE8-5D2A-4EA0-AE57-DF660112B88F"),
+                        UserId = Guid.Parse("81E68DE8-5D2A-4EA0-AE57-DF660112B88F"),
                         number = 25,
                         position = "RB",
-                        UserId = UserBId,
                     },
                     new AJAXKyiv.Domain.Footballer
                     {

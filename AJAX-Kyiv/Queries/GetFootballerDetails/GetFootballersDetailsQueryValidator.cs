@@ -9,7 +9,6 @@ namespace Queries.GetFootballerDetails
         public GetFootballersDetailsQueryValidator()
         {
             RuleFor(footballer => footballer.UserId).NotEqual(Guid.Empty);
-            RuleFor(footballer => footballer.Id).NotEqual(Guid.Empty);
         }
     }
 }
